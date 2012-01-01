@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "speaking at a conference"
+title: "Speaking at a Conference"
 date: 2011-12-27 21:44
 comments: true
 categories: Conferences
