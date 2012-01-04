@@ -4,7 +4,7 @@
   <title><![CDATA[Garrett Johnson]]></title>
   <link href="http://garrett-johnson.com/atom.xml" rel="self"/>
   <link href="http://garrett-johnson.com/"/>
-  <updated>2011-12-27T22:00:15-05:00</updated>
+  <updated>2012-01-03T23:47:12-05:00</updated>
   <id>http://garrett-johnson.com/</id>
   <author>
     <name><![CDATA[Garrett Johnson]]></name>
@@ -14,11 +14,49 @@
 
   
   <entry>
-    <title type="html"><![CDATA[speaking at a conference]]></title>
+    <title type="html"><![CDATA[Harmony]]></title>
+    <link href="http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one/"/>
+    <updated>2012-01-01T14:53:00-05:00</updated>
+    <id>http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one</id>
+    <content type="html"><![CDATA[<p>Harmony is an ECMAScript (ES) project/effort that aims to improve the current ES spec (fifth edition) with new language features and some house cleaning of quirky behavior. It will ultimately form what will become sixth edition of ES. More details can found on <a href="http://wiki.ecmascript.org/doku.php?id=harmony:harmony">ES wiki</a>.</p>
+
+<!-- more -->
+
+
+<p>Some <a href="http://wiki.ecmascript.org/doku.php?id=harmony:proposals">Harmony slated</a> features are starting to make their way into various JS engines for the intriqued to tinker around with. Right around Christmas time, <a href="https://plus.google.com/113127438179392830442/posts/T615Md5JPQG">Google Chrome added a flag</a> to enable a few of them. <a href="http://code.google.com/p/v8/">V8</a> is the JS engine underneath Chrome, so another usefull option is to <a href="http://code.google.com/apis/v8/build.html">download and build V8 locally</a>; you can then pass the <code>--harmony</code> argument to the V8 shell. I like this option because these features do not need a DOM and even though node.js also uses V8 under the hood, I don&#8217;t have to muck around with multiple node installs, etc.</p>
+
+<figure class='code'><figcaption><span>Executing a script via the V8 shell.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>~ <span class="nv">$ </span>d8 my_script.js --harmony
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Mozilla&#8217;s JS engine, <a href="https://developer.mozilla.org/en/SpiderMonkey">SpiderMonkey</a>, implements some of these features as well and actually quite a few others which have been slated for the Harmony spec. Most of these require an opt in too, so you need to pass the version flag with the latest version to the type attribute on the script tag.</p>
+
+<figure class='code'><figcaption><span>Opt in via the script tag version.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript;version=1.8&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Just as with V8, you can <a href="https://developer.mozilla.org/En/SpiderMonkey/Build_Documentation">download and build SpiderMonkey locally</a>. This is actually how I currently prefer to try out new features that I come across. The only real reason for this decision is that currently SpiderMonkey has a few more features to play around with than V8.</p>
+
+<figure class='code'><figcaption><span>Executing a script via SpiderMonkey.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>~ <span class="nv">$ </span>js -f my_script.js
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I will attempt to explore new additions as they are implemented, each one having a post categorized under <a href="http://garrett-johnson.com/blog/categories/harmony">harmony</a>. Be sure to check back for updates, as I am sure something will change and I will try to update accordingly.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Speaking at a Conference]]></title>
     <link href="http://garrett-johnson.com/blog/2011/12/27/speaking-at-a-conference/"/>
     <updated>2011-12-27T21:44:00-05:00</updated>
     <id>http://garrett-johnson.com/blog/2011/12/27/speaking-at-a-conference</id>
     <content type="html"><![CDATA[<p>I recently decided to take a big step out and speak at a conference. While I have spoken in front of the <a href="http://www.charlottejs.org," title="Charlotte JavaScript Meetup">CharlotteJS</a> group numerous times, this was the first time I gave a presentation in a conference setting. Here are three lessons I learned while loosing my conference presenter virginity per say. :-)</p>
+
+<!-- more -->
+
 
 <ol>
 <li><p>Understand your slides and outline, but don’t be a stickler and ramble pre-determined words slide by slide. Normally when speaking at meetups, I barely prepare&#8230; Usually there are a few slides, I just go with the flow, do on the fly coding, etc. I of course thought that a conference presentation should not be this relaxed. However, after the fact, I now think there needs to be a good middle ground. By that I mean while the presentation should be followed with a concrete outline, there still needs to be interaction with the audience. Once you stop that interaction, you loose the attention and interest in your topic. The audience should be able to leave the presentation with the feeling that you as the presenter fulfilled whatever promise you made within your presentation description on the on the conference website.</p></li>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: JavaScript, | Garrett Johnson]]></title>
+  <link href="http://garrett-johnson.com/blog/categories/javascript-/atom.xml" rel="self"/>
+  <link href="http://garrett-johnson.com/"/>
+  <updated>2012-01-03T23:47:12-05:00</updated>
+  <id>http://garrett-johnson.com/</id>
+  <author>
+    <name><![CDATA[Garrett Johnson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Harmony]]></title>
+    <link href="http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one/"/>
+    <updated>2012-01-01T14:53:00-05:00</updated>
+    <id>http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one</id>
+    <content type="html"><![CDATA[<p>Harmony is an ECMAScript (ES) project/effort that aims to improve the current ES spec (fifth edition) with new language features and some house cleaning of quirky behavior. It will ultimately form what will become sixth edition of ES. More details can found on <a href="http://wiki.ecmascript.org/doku.php?id=harmony:harmony">ES wiki</a>.</p>
+
+<!-- more -->
+
+
+<p>Some <a href="http://wiki.ecmascript.org/doku.php?id=harmony:proposals">Harmony slated</a> features are starting to make their way into various JS engines for the intriqued to tinker around with. Right around Christmas time, <a href="https://plus.google.com/113127438179392830442/posts/T615Md5JPQG">Google Chrome added a flag</a> to enable a few of them. <a href="http://code.google.com/p/v8/">V8</a> is the JS engine underneath Chrome, so another usefull option is to <a href="http://code.google.com/apis/v8/build.html">download and build V8 locally</a>; you can then pass the <code>--harmony</code> argument to the V8 shell. I like this option because these features do not need a DOM and even though node.js also uses V8 under the hood, I don't have to muck around with multiple node installs, etc.</p>
+
+<p><code>sh Executing a script via the V8 shell.
+~ $ d8 my_script.js --harmony
+</code></p>
+
+<p>Mozilla's JS engine, <a href="https://developer.mozilla.org/en/SpiderMonkey">SpiderMonkey</a>, implements some of these features as well and actually quite a few others which have been slated for the Harmony spec. Most of these require an opt in too, so you need to pass the version flag with the latest version to the type attribute on the script tag.</p>
+
+<p>``` html Opt in via the script tag version.</p>
+
+<script type="text/javascript;version=1.8"></script>
+
+
+<p>```</p>
+
+<p>Just as with V8, you can <a href="https://developer.mozilla.org/En/SpiderMonkey/Build_Documentation">download and build SpiderMonkey locally</a>. This is actually how I currently prefer to try out new features that I come across. The only real reason for this decision is that currently SpiderMonkey has a few more features to play around with than V8.</p>
+
+<p><code>sh Executing a script via SpiderMonkey.
+~ $ js -f my_script.js
+</code></p>
+
+<p>I will attempt to explore new additions as they are implemented, each one having a post categorized under <a href="/blog/categories/harmony">harmony</a>. Be sure to check back for updates, as I am sure something will change and I will try to update accordingly.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Speaking at a Conference - Garrett Johnson</title>
+  <title>Harmony - Garrett Johnson</title>
   <meta name="author" content="Garrett Johnson">
 
   
-  <meta name="description" content="I recently decided to take a big step out and speak at a conference. While I have spoken in front of the CharlotteJS group numerous times, this was &hellip;">
+  <meta name="description" content="Harmony is an ECMAScript (ES) project/effort that aims to improve the current ES spec (fifth edition) with new language features and some house &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://garrett-johnson.com/blog/2011/12/27/speaking-at-a-conference">
+  <link rel="canonical" href="http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title">Speaking at a Conference</h1>
+      <h1 class="entry-title">Harmony</h1>
     
     
       <p class="meta">
@@ -83,7 +83,7 @@
   
 
 
-<time datetime="2011-12-27T21:44:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2011</time>
+<time datetime="2012-01-01T14:53:00-05:00" pubdate data-updated="true">Jan 1<span>st</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -92,19 +92,33 @@
   </header>
 
 
-<div class="entry-content"><p>I recently decided to take a big step out and speak at a conference. While I have spoken in front of the <a href="http://www.charlottejs.org," title="Charlotte JavaScript Meetup">CharlotteJS</a> group numerous times, this was the first time I gave a presentation in a conference setting. Here are three lessons I learned while loosing my conference presenter virginity per say. :-)</p>
+<div class="entry-content"><p>Harmony is an ECMAScript (ES) project/effort that aims to improve the current ES spec (fifth edition) with new language features and some house cleaning of quirky behavior. It will ultimately form what will become sixth edition of ES. More details can found on <a href="http://wiki.ecmascript.org/doku.php?id=harmony:harmony">ES wiki</a>.</p>
 
 <!-- more -->
 
 
-<ol>
-<li><p>Understand your slides and outline, but don’t be a stickler and ramble pre-determined words slide by slide. Normally when speaking at meetups, I barely prepare&#8230; Usually there are a few slides, I just go with the flow, do on the fly coding, etc. I of course thought that a conference presentation should not be this relaxed. However, after the fact, I now think there needs to be a good middle ground. By that I mean while the presentation should be followed with a concrete outline, there still needs to be interaction with the audience. Once you stop that interaction, you loose the attention and interest in your topic. The audience should be able to leave the presentation with the feeling that you as the presenter fulfilled whatever promise you made within your presentation description on the on the conference website.</p></li>
-<li><p>Understand your audience. Being in technology, some people will be interested in any type of geeky topic you share, however the presentation should be zoned in on why the majority of the audience is there. For example, if it is a web development conference, the presentation should be relative to web development, not low level historical facts, that while may support the underlying concerns of web development, don’t really concern the interests of the audience today. It might be okay to include these historical facts, but be sure to tie it into the main interest of the audience with supporting examples.</p></li>
-<li><p>Take the responsibility as a speaker serious. Whether it is a $2,000 or a free conference. The responsibility of a speaker is a important one, the audience sacrificed (in some way or another) to come see a quality presentations. Take the time before the live conference presentation to tune everything about the talk, do not just wrap up the presentation for the first time 5 minutes before speaking. It is owed the audience to have everything well prepared and ready, this should include everything from a solid talk to making sure the computer works well with the projector with out issue.</p></li>
-</ol>
+<p>Some <a href="http://wiki.ecmascript.org/doku.php?id=harmony:proposals">Harmony slated</a> features are starting to make their way into various JS engines for the intriqued to tinker around with. Right around Christmas time, <a href="https://plus.google.com/113127438179392830442/posts/T615Md5JPQG">Google Chrome added a flag</a> to enable a few of them. <a href="http://code.google.com/p/v8/">V8</a> is the JS engine underneath Chrome, so another usefull option is to <a href="http://code.google.com/apis/v8/build.html">download and build V8 locally</a>; you can then pass the <code>--harmony</code> argument to the V8 shell. I like this option because these features do not need a DOM and even though node.js also uses V8 under the hood, I don&#8217;t have to muck around with multiple node installs, etc.</p>
+
+<figure class='code'><figcaption><span>Executing a script via the V8 shell.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>~ <span class="nv">$ </span>d8 my_script.js --harmony
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>I know that I learned a lot from this experience and look forward to presenting again while applying the lessons learned noted here. If you enjoy sharing what-so-ever, I can not recommend enough to get involved by speaking at a conference. It is quite an experience.</p>
+<p>Mozilla&#8217;s JS engine, <a href="https://developer.mozilla.org/en/SpiderMonkey">SpiderMonkey</a>, implements some of these features as well and actually quite a few others which have been slated for the Harmony spec. Most of these require an opt in too, so you need to pass the version flag with the latest version to the type attribute on the script tag.</p>
+
+<figure class='code'><figcaption><span>Opt in via the script tag version.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript;version=1.8&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Just as with V8, you can <a href="https://developer.mozilla.org/En/SpiderMonkey/Build_Documentation">download and build SpiderMonkey locally</a>. This is actually how I currently prefer to try out new features that I come across. The only real reason for this decision is that currently SpiderMonkey has a few more features to play around with than V8.</p>
+
+<figure class='code'><figcaption><span>Executing a script via SpiderMonkey.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>~ <span class="nv">$ </span>js -f my_script.js
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I will attempt to explore new additions as they are implemented, each one having a post categorized under <a href="/blog/categories/harmony">harmony</a>. Be sure to check back for updates, as I am sure something will change and I will try to update accordingly.</p>
 </div>
 
 
@@ -127,12 +141,12 @@
   
 
 
-<time datetime="2011-12-27T21:44:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2011</time>
+<time datetime="2012-01-01T14:53:00-05:00" pubdate data-updated="true">Jan 1<span>st</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/conferences/'>Conferences</a>
+    <a class='category' href='/blog/categories/harmony/'>Harmony</a>, <a class='category' href='/blog/categories/javascript-/'>JavaScript,</a>
   
 </span>
 
@@ -141,7 +155,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://garrett-johnson.com/blog/2011/12/27/speaking-at-a-conference/" data-via="gjohnson391" data-counturl="http://garrett-johnson.com/blog/2011/12/27/speaking-at-a-conference/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one/" data-via="gjohnson391" data-counturl="http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -152,8 +166,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2011/12/27/speaking-at-a-conference/" title="Previous Post: Speaking at a Conference">&laquo; Speaking at a Conference</a>
       
-        <a class="basic-alignment right" href="/blog/2012/01/01/es-harmony-part-one/" title="next Post: Harmony">Harmony &raquo;</a>
       
     </p>
   </footer>
@@ -224,8 +238,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://garrett-johnson.com/blog/2011/12/27/speaking-at-a-conference/';
-        var disqus_url = 'http://garrett-johnson.com/blog/2011/12/27/speaking-at-a-conference/';
+        var disqus_identifier = 'http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one/';
+        var disqus_url = 'http://garrett-johnson.com/blog/2012/01/01/es-harmony-part-one/';
         var disqus_script = 'embed.js';
       
     (function () {
