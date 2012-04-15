@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javascript | Garrett Johnson]]></title>
+  <link href="http://garrett-johnson.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://garrett-johnson.com/"/>
+  <updated>2012-04-15T13:23:31-04:00</updated>
+  <id>http://garrett-johnson.com/</id>
+  <author>
+    <name><![CDATA[Garrett Johnson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[On the sans-semicolon debate]]></title>
+    <link href="http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon/"/>
+    <updated>2012-04-15T11:57:00-04:00</updated>
+    <id>http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon</id>
+    <content type="html"><![CDATA[<p>There was little community drama over the lack of semicolons that was causing an issue for a user of <a href="https://github.com/twitter/bootstrap/issues/3057">twitter's bootstrap</a>. I think the most pathetic thing here is the newer users who have to be stuck in the middle with broken code because everyone is teaching them different things; not to mention their actual issue(s) being ignored and burned by "community leaders" during their pissing matches.</p>
+
+<p>Users are taught that it is a best practice to lint check their projects. They set their directives to require semicolons, among other things because their JavaScript Book said this is important. However the lint check reports are so convoluted with errors about missing semicolons from external dependencies, they stop running link checks all together until the project structure can be re-organized in a fashion where external dependencies are not link checked.</p>
+
+<blockquote><p><strong>"Too many errors. (12% scanned)."</strong></p></blockquote>
+
+<p>Users are also taught the benefits of splitting a project into multiple source files and to concatenate those files, along with any smaller external dependencies into a single file for deployment. This also helps get around the ignored lint check errors mentioned previously. However, with a perfect score on the link check report, loading their application in the browser stops in it's tracks with the following error:</p>
+
+<blockquote><p><strong>"TypeError: undefined is not a function"</strong></p></blockquote>
+
+<p>It ends up that after concatening their project it ended up looking like this:</p>
+
+<p>``` javascript
+/<em>!
+ * This is the awesome.js library that is portable and runs EVERYWHERE!
+ </em>/
+!function(global, undefined){</p>
+
+<p>}(window)</p>
+
+<p>/<em>!
+ * This is the users code, wrapped in one of those nifty imediate executing functions they learned
+ * was also a best practice.
+ </em>/
+(function(global){</p>
+
+<p>})(window, undefined);
+```</p>
+
+<p>Most new-ish JavaScript developers are not going to figure out why that does not work, nor understand it. If or once they do, <a href="https://github.com/twitter/bootstrap/issues/3057">twitter's bootstrap</a> is a good example of what will happen when they seek help from the maintainer(s) of the very projects that are indirectly causing all the best practices learned to go to complete shit.</p>
+
+<p>There should not even be a debate whether semicolons are a required syntax or not. I think the simple fact that using semicolons causes no issues and not using them brings out various bugs should make it pretty apparent what we should be doing.</p>
+]]></content>
+  </entry>
+  
+</feed>

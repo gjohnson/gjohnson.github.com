@@ -4,7 +4,7 @@
   <title><![CDATA[Garrett Johnson]]></title>
   <link href="http://garrett-johnson.com/atom.xml" rel="self"/>
   <link href="http://garrett-johnson.com/"/>
-  <updated>2012-01-04T22:57:51-05:00</updated>
+  <updated>2012-04-15T13:23:31-04:00</updated>
   <id>http://garrett-johnson.com/</id>
   <author>
     <name><![CDATA[Garrett Johnson]]></name>
@@ -12,6 +12,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[On the sans-semicolon debate]]></title>
+    <link href="http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon/"/>
+    <updated>2012-04-15T11:57:00-04:00</updated>
+    <id>http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon</id>
+    <content type="html"><![CDATA[<p>There was little community drama over the lack of semicolons that was causing an issue for a user of <a href="https://github.com/twitter/bootstrap/issues/3057">twitter&#8217;s bootstrap</a>. I think the most pathetic thing here is the newer users who have to be stuck in the middle with broken code because everyone is teaching them different things; not to mention their actual issue(s) being ignored and burned by &#8220;community leaders&#8221; during their pissing matches.</p>
+
+<p>Users are taught that it is a best practice to lint check their projects. They set their directives to require semicolons, among other things because their JavaScript Book said this is important. However the lint check reports are so convoluted with errors about missing semicolons from external dependencies, they stop running link checks all together until the project structure can be re-organized in a fashion where external dependencies are not link checked.</p>
+
+<blockquote><p><strong>&#8220;Too many errors. (12% scanned).&#8221;</strong></p></blockquote>
+
+<p>Users are also taught the benefits of splitting a project into multiple source files and to concatenate those files, along with any smaller external dependencies into a single file for deployment. This also helps get around the ignored lint check errors mentioned previously. However, with a perfect score on the link check report, loading their application in the browser stops in it&#8217;s tracks with the following error:</p>
+
+<blockquote><p><strong>&#8220;TypeError: undefined is not a function&#8221;</strong></p></blockquote>
+
+<p>It ends up that after concatening their project it ended up looking like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="cm">/*!</span>
+</span><span class='line'><span class="cm"> * This is the awesome.js library that is portable and runs EVERYWHERE!</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">global</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}(</span><span class="nb">window</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/*!</span>
+</span><span class='line'><span class="cm"> * This is the users code, wrapped in one of those nifty imediate executing functions they learned</span>
+</span><span class='line'><span class="cm"> * was also a best practice.</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">global</span><span class="p">){</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">})(</span><span class="nb">window</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Most new-ish JavaScript developers are not going to figure out why that does not work, nor understand it. If or once they do, <a href="https://github.com/twitter/bootstrap/issues/3057">twitter&#8217;s bootstrap</a> is a good example of what will happen when they seek help from the maintainer(s) of the very projects that are indirectly causing all the best practices learned to go to complete shit.</p>
+
+<p>There should not even be a debate whether semicolons are a required syntax or not. I think the simple fact that using semicolons causes no issues and not using them brings out various bugs should make it pretty apparent what we should be doing.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Harmony - Scope]]></title>

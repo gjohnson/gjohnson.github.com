@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Garrett Johnson</title>
+  <title>On the sans-semicolon debate - Garrett Johnson</title>
   <meta name="author" content="Garrett Johnson">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://garrett-johnson.com">
+  <link rel="canonical" href="http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -62,15 +62,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/04/15/my-issues-with-sans-semicolon/">On the Sans-semicolon Debate</a></h1>
+      <h1 class="entry-title">On the Sans-semicolon Debate</h1>
     
     
       <p class="meta">
@@ -88,14 +85,14 @@
 
 <time datetime="2012-04-15T11:57:00-04:00" pubdate data-updated="true">Apr 15<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/04/15/my-issues-with-sans-semicolon/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>There was little community drama over the lack of semicolons that was causing an issue for a user of <a href="https://github.com/twitter/bootstrap/issues/3057">twitter&#8217;s bootstrap</a>. I think the most pathetic thing here is the newer users who have to be stuck in the middle with broken code because everyone is teaching them different things; not to mention their actual issue(s) being ignored and burned by &#8220;community leaders&#8221; during their pissing matches.</p>
+<div class="entry-content"><p>There was little community drama over the lack of semicolons that was causing an issue for a user of <a href="https://github.com/twitter/bootstrap/issues/3057">twitter&#8217;s bootstrap</a>. I think the most pathetic thing here is the newer users who have to be stuck in the middle with broken code because everyone is teaching them different things; not to mention their actual issue(s) being ignored and burned by &#8220;community leaders&#8221; during their pissing matches.</p>
 
 <p>Users are taught that it is a best practice to lint check their projects. They set their directives to require semicolons, among other things because their JavaScript Book said this is important. However the lint check reports are so convoluted with errors about missing semicolons from external dependencies, they stop running link checks all together until the project structure can be re-organized in a fashion where external dependencies are not link checked.</p>
 
@@ -142,106 +139,16 @@
 
 <p>There should not even be a debate whether semicolons are a required syntax or not. I think the simple fact that using semicolons causes no issues and not using them brings out various bugs should make it pretty apparent what we should be doing.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/04/harmony-scopes/">Harmony - Scope</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Garrett Johnson</span></span>
 
-<time datetime="2012-01-04T00:04:00-05:00" pubdate data-updated="true">Jan 4<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/01/04/harmony-scopes/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Harmony finally introduces block scope into JS. While the syntax of blocks have always been in JS, they have had no associated context for variables to bind to. This is something you may be familar with if you have ever written any C.</p>
-
-<figure class='code'><figcaption><span>Block scoped variables in C.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kt">char</span> <span class="n">foo</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;foo 1&quot;</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">foo</span><span class="p">);</span> <span class="c1">// =&gt; &quot;foo 1&quot;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="kt">char</span> <span class="n">foo</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;foo 2&quot;</span><span class="p">;</span>
-</span><span class='line'>        <span class="kt">char</span> <span class="n">bar</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;bar 1&quot;</span><span class="p">;</span>
-</span><span class='line'>        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">foo</span><span class="p">);</span> <span class="c1">// &gt;= &quot;foo 2&quot;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">foo</span><span class="p">);</span> <span class="c1">// =&gt; &quot;foo 1&quot;</span>
-</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">bar</span><span class="p">);</span> <span class="c1">// =&gt; Compiler error about undeclared `bar`.</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As shown in the example above, the declared variables within the block starting on line 8 have no side effects on the variables with the same indentifier declared in the function body block. However, as you probably know, this is not the case in JS; the only context that variables can bind to is locally to a function or globaly.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/01/04/harmony-scopes/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/01/es-harmony-part-one/">Harmony</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -253,77 +160,46 @@
   
 
 
-<time datetime="2012-01-01T14:53:00-05:00" pubdate data-updated="true">Jan 1<span>st</span>, 2012</time>
-        
-         | <a href="/blog/2012/01/01/es-harmony-part-one/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Harmony is an ECMAScript (ES) project/effort that aims to improve the current ES spec (fifth edition) with new language features and some house cleaning of quirky behavior. It will ultimately form what will become sixth edition of ES. More details can found on <a href="http://wiki.ecmascript.org/doku.php?id=harmony:harmony">ES wiki</a>.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/01/01/es-harmony-part-one/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-04-15T11:57:00-04:00" pubdate data-updated="true">Apr 15<span>th</span>, 2012</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/27/speaking-at-a-conference/">Speaking at a Conference</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>
+  
+</span>
 
 
-<time datetime="2011-12-27T21:44:00-05:00" pubdate data-updated="true">Dec 27<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/12/27/speaking-at-a-conference/#disqus_thread">Comments</a>
-        
-      </p>
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon/" data-via="gjohnson391" data-counturl="http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/01/04/harmony-scopes/" title="Previous Post: Harmony - Scope">&laquo; Harmony - Scope</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-  <div class="entry-content"><p>I recently decided to take a big step out and speak at a conference. While I have spoken in front of the <a href="http://www.charlottejs.org," title="Charlotte JavaScript Meetup">CharlotteJS</a> group numerous times, this was the first time I gave a presentation in a conference setting. Here are three lessons I learned while loosing my conference presenter virginity per say. :-)</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/12/27/speaking-at-a-conference/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -353,7 +229,7 @@
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -373,6 +249,7 @@
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -387,7 +264,10 @@
       var disqus_shortname = 'gjj391';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon/';
+        var disqus_url = 'http://garrett-johnson.com/blog/2012/04/15/my-issues-with-sans-semicolon/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
