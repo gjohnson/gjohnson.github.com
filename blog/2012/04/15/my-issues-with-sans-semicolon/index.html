@@ -94,6 +94,8 @@
 
 <div class="entry-content"><p>There was little community drama over the lack of semicolons that was causing an issue for a user of <a href="https://github.com/twitter/bootstrap/issues/3057">twitter&#8217;s bootstrap</a>. I think the most pathetic thing here is the newer users who have to be stuck in the middle with broken code because everyone is teaching them different things; not to mention their actual issue(s) being ignored and burned by &#8220;community leaders&#8221; during their pissing matches.</p>
 
+<p>Here are just a couple of examples that totally cause confusion amongst newcomers:</p>
+
 <p>Users are taught that it is a best practice to lint check their projects. They set their directives to require semicolons, among other things because their JavaScript Book said this is important. However the lint check reports are so convoluted with errors about missing semicolons from external dependencies, they stop running link checks all together until the project structure can be re-organized in a fashion where external dependencies are not link checked.</p>
 
 <blockquote><p><strong>&#8220;Too many errors. (12% scanned).&#8221;</strong></p></blockquote>
@@ -135,7 +137,18 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Most new-ish JavaScript developers are not going to figure out why that does not work, nor understand it. If or once they do, <a href="https://github.com/twitter/bootstrap/issues/3057">twitter&#8217;s bootstrap</a> is a good example of what will happen when they seek help from the maintainer(s) of the very projects that are indirectly causing all the best practices learned to go to complete shit.</p>
+<p>The issue here being <code>awesome.js</code> did not use semicolons, so once the two files were concatenated, an undefined function invocation was formed between the two imediate executing functions.</p>
+
+<p>The last issue I will mention is the exact issue on <a href="https://github.com/twitter/bootstrap/issues/3057">twitter&#8217;s bootstrap</a>. Once the user took the recommended steps of minifying their project, the removal of whitespace smooshed together statements that were not seperated by semicolons, causing all sorts of wonky errors for the user.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">clearMenus</span><span class="p">()</span>
+</span><span class='line'><span class="o">!</span><span class="nx">isActive</span> <span class="o">&amp;&amp;</span> <span class="nx">$parent</span><span class="p">.</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Some of these bugs are quite tricky to figure out, most novice JavaScript developers will have a difficult time pin-pointing them, especially since they occur in library code. If or once they do figure it out, <a href="https://github.com/twitter/bootstrap/issues/3057">twitter&#8217;s bootstrap</a> is a good example of what will happen when they seek help from the maintainer(s) of the very projects that are indirectly causing all the best practices learned to go to complete shit. No wonder we see web pages with 15 script includes, unminified, and doing everything that is recommended not to do.</p>
 
 <p>There should not even be a debate whether semicolons are a required syntax or not. I think the simple fact that using semicolons causes no issues and not using them brings out various bugs should make it pretty apparent what we should be doing.</p>
 </div>
